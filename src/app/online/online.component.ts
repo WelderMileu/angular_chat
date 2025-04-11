@@ -14,6 +14,7 @@ export class OnlineComponent {
       user_name: "John Doe",
       last_message: "Hi there, How are you?",
       status: true,
+      length_notify: 0,
       time: "09:00"
     }, 
     {
@@ -21,7 +22,16 @@ export class OnlineComponent {
       user_name: "Jessie Woo",
       last_message: "Working with you like dream!",
       status: true,
+      length_notify: 5,
       time: "08:50"
+    },
+    {
+      avatar: "https://randomuser.me/api/portraits/women/70.jpg",
+      user_name: "Amella Nelson",
+      last_message: "Hi there, How are you?",
+      status: true,
+      length_notify: 5,
+      time: "08:30"
     },
 
   ]
