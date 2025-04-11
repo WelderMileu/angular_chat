@@ -8,16 +8,18 @@
         <ul class="flex gap-6">
             @for (items of items_m; track items.name) {
 
-            @if ( items.activate == true) {
             <li class="relative">
+                @if ( items.activate == true) {
+                <div class="font-bold uppercase text-xs text-green-700">{{ items.name }}</div>
                 <span class="absolute top-6 w-10 h-1 bg-green-700" style="right: -15%;"></span>
-                <p class="font-bold uppercase text-xs text-green-700">{{ items.name }}</p>
+
+                } @else {
+                <div class="font-bold uppercase text-xs text-gray-700">{{ items.name }}</div>
+                }
+                
+                <!-- font-bold uppercase text-xs text-green-700 -->
             </li>
-            } @else {
-            <li>
-                <p class="font-bold uppercase text-xs text-gray-700">{{ items.name }}</p>
-            </li>
-            } }
+            }
 
         </ul>
 
@@ -25,7 +27,7 @@
             <i class="pr-10 text-2xl fa-solid fa-magnifying-glass"></i>
 
             <div class="relative">
-                <span class="absolute top-0.5 right-0 w-2 h-2 bg-yellow-600"></span>
+                <span class="absolute top-0.5 right-0 w-2 h-2 bg-yellow-600 rounded-full"></span>
                 <i class="text-2xl fa-regular fa-bell"></i>
             </div>
         </div>
