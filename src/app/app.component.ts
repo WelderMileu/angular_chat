@@ -3,6 +3,7 @@ import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './search/search.component';
 import { OnlineComponent } from './online/online.component';
 import { BoxComponent } from './box/box.component';
+import { SendComponent } from './send/send.component';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { BoxComponent } from './box/box.component';
     HeaderComponent,
     SearchComponent,
     OnlineComponent,
-    BoxComponent
+    BoxComponent,
+    SendComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

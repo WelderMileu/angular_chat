@@ -6,19 +6,28 @@
 
     <section class="flex items-center justify-between">
         <ul class="flex gap-6">
-            <li class="font-bold uppercase text-xs text-gray-700">home</li>
-            <li class="font-bold uppercase text-xs text-gray-700">chat</li>
-            <li class="font-bold uppercase text-xs text-gray-700">contacts</li>
-            <li class="font-bold uppercase text-xs text-gray-700">settings</li>
-            <li class="font-bold uppercase text-xs text-gray-700">fags</li>
-            <li class="font-bold uppercase text-xs text-gray-700">terms of use</li>
+            @for (items of items_m; track items.name) {
+
+            @if ( items.activate == true) {
+            <li class="relative">
+                <span class="absolute top-6 w-10 h-1 bg-green-700" style="right: -15%;"></span>
+                <p class="font-bold uppercase text-xs text-green-700">{{ items.name }}</p>
+            </li>
+            } @else {
+            <li>
+                <p class="font-bold uppercase text-xs text-gray-700">{{ items.name }}</p>
+            </li>
+            } }
+
         </ul>
 
-        <section class="flex justify-end">
-            <div>
-                <i class="pr-10 text-2xl fa-solid fa-magnifying-glass"></i>
+        <div class="flex justify-end">
+            <i class="pr-10 text-2xl fa-solid fa-magnifying-glass"></i>
+
+            <div class="relative">
+                <span class="absolute top-0.5 right-0 w-2 h-2 bg-yellow-600"></span>
                 <i class="text-2xl fa-regular fa-bell"></i>
             </div>
-        </section>
+        </div>
     </section>
 </nav>
