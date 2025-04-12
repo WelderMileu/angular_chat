@@ -6,21 +6,10 @@
 
     <section class="flex items-center justify-between">
         <ul class="flex gap-6">
-            @for (items of items_m; track items.name) {
-
-            <li class="relative">
-                @if ( items.activate == true) {
-                <div class="font-bold uppercase text-xs text-green-700">{{ items.name }}</div>
-                <span class="absolute top-6 w-10 h-1 bg-green-700" style="right: -15%;"></span>
-
-                } @else {
-                <div class="font-bold uppercase text-xs text-gray-700">{{ items.name }}</div>
-                }
-                
-                <!-- font-bold uppercase text-xs text-green-700 -->
+            <li *ngFor="let items of items_m" class="relative">
+                <div  [ngClass]="items.activate ? 'text-green-700' : 'text-gray-700'" class="font-bold uppercase text-xs">{{ items.name }}</div>
+                <span [ngClass]="{ 'hidden' : items.activate == false }" class="absolute top-6 w-10 h-1 bg-green-700" style="right: -15%;"></span>
             </li>
-            }
-
         </ul>
 
         <div class="flex justify-end">

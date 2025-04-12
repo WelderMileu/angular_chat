@@ -1,8 +1,9 @@
+import { NgClass, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-online',
-  imports: [],
+  imports: [NgFor, NgClass],
   templateUrl: './online.component.html',
   styleUrl: './online.component.css'
 })

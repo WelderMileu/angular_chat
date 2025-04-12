@@ -1,7 +1,6 @@
 <section class="bg-white p-6 rounded-2xl">
-    @for (user of user_onOff; track user.user_name) {
-    @if (user.status == true) {
-    <div class="flex justify-between mb-7">
+    
+    <div *ngFor="let user of user_onOff"  class="flex justify-between mb-7">
         <div class="flex gap-3 justify-center items-center">
             <div class="relative">
                 <span
@@ -14,18 +13,12 @@
             </div>
         </div>
 
-        <div class="flex flex-col gap-3 items-end">
+        <div class="flex flex-col gap-3 items-end visible">
             <p class="font-bold text-gray-700 text-xs">{{ user.time }}</p>
 
-            @if (user.length_notify > 0) {
-            <div class="flex justify-center items-center bg-yellow-600 opacity-70 w-5 h-5 p-1 rounded-full">
+            <div [ngClass]="{ 'hidden' : user.length_notify <= 0 }" class="flex justify-center items-center bg-yellow-600 opacity-70 w-5 h-5 p-1 rounded-full">
                 <p class="text-xs text-white font-bold">5</p>
             </div>
-            }
-
         </div>
     </div>
-    }
-    }
-
 </section>
